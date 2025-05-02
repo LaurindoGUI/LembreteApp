@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/editTextLembrete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Digite seu lembrete"
+        android:padding="16dp"
+        android:minHeight="48dp" />
+
+
+    <Button
+        android:id="@+id/btnSalvar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Salvar"
+        android:minHeight="48dp"
+        android:padding="16dp" />
+
+    <Button
+        android:id="@+id/btnDeletar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Deletar" />
+
+    <TextView
+        android:id="@+id/textViewLembrete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nenhum lembrete salvo"
+        android:textSize="18sp"
+        android:paddingTop="16dp" />
+</LinearLayout>
