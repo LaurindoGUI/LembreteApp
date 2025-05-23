@@ -5,13 +5,24 @@
     android:orientation="vertical"
     android:padding="16dp">
 
+
+    <TextView
+        android:id="@+id/textViewSaudacao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Olá, Usuário"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:paddingBottom="16dp" />
+
+
     <EditText
         android:id="@+id/editTextLembrete"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Digite seu lembrete"
-        android:padding="16dp"
-        android:minHeight="48dp" />
+        android:minHeight="48dp"
+        android:padding="12dp" />
 
 
     <Button
@@ -20,19 +31,22 @@
         android:layout_height="wrap_content"
         android:text="Salvar"
         android:minHeight="48dp"
-        android:padding="16dp" />
+        android:layout_marginTop="8dp" />
+
 
     <Button
         android:id="@+id/btnDeletar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Deletar" />
+        android:text="Deletar Todos"
+        android:layout_marginTop="8dp" />
+
 
     <TextView
         android:id="@+id/textViewLembrete"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Nenhum lembrete salvo"
-        android:textSize="18sp"
+        android:textSize="16sp"
         android:paddingTop="16dp" />
 </LinearLayout>

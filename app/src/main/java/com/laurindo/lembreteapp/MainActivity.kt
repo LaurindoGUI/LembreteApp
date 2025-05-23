@@ -13,6 +13,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var btnSalvar: Button
     private lateinit var btnDeletar: Button
     private lateinit var textViewLembrete: TextView
+    private lateinit var textViewSaudacao: TextView
 
     private val PREFS_NAME = "meus_lembretes"
     private val CHAVE_LEMBRETE = "lembrete_salvo"
@@ -25,16 +26,28 @@ class MainActivity : AppCompatActivity() {
         btnSalvar = findViewById(R.id.btnSalvar)
         btnDeletar = findViewById(R.id.btnDeletar)
         textViewLembrete = findViewById(R.id.textViewLembrete)
+        textViewSaudacao = findViewById(R.id.textViewSaudacao)
+
+        val nomeUsuario = intent.getStringExtra("NOME_USUARIO")
+        if (!nomeUsuario.isNullOrEmpty()) {
+            textViewSaudacao.text = "Olá, $nomeUsuario"
+        }
 
         val prefs = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
-        val lembreteSalvo = prefs.getString(CHAVE_LEMBRETE, "")
-        textViewLembrete.text = if (lembreteSalvo!!.isNotEmpty()) lembreteSalvo else "Nenhum lembrete salvo"
+        val lembretesSalvos = prefs.getString(CHAVE_LEMBRETE, "") ?: ""
+        textViewLembrete.text = if (lembretesSalvos.isNotEmpty()) lembretesSalvos else "Nenhum lembrete salvo"
 
         btnSalvar.setOnClickListener {
-            val texto = editTextLembrete.text.toString()
-            if (texto.isNotEmpty()) {
-                prefs.edit().putString(CHAVE_LEMBRETE, texto).apply()
-                textViewLembrete.text = texto
+            val textoNovo = editTextLembrete.text.toString()
+            if (textoNovo.isNotEmpty()) {
+                val lembretesAntigos = prefs.getString(CHAVE_LEMBRETE, "") ?: ""
+                val todosLembretes = if (lembretesAntigos.isNotEmpty()) {
+                    "$lembretesAntigos\n$textoNovo"
+                } else {
+                    textoNovo
+                }
+                prefs.edit().putString(CHAVE_LEMBRETE, todosLembretes).apply()
+                textViewLembrete.text = todosLembretes
                 editTextLembrete.text.clear()
             }
         }
