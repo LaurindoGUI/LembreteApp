@@ -36,6 +36,7 @@ android {
     }
     kotlinOptions {
         jvmTarget = "1.8"
+        languageVersion = "2.1"
     }
     buildFeatures {
         compose = true
@@ -51,8 +52,9 @@ android {
 }
 
 dependencies {
-    implementation("com.google.firebase:firebase-analytics")
     implementation(platform("com.google.firebase:firebase-bom:33.14.0"))
+    implementation("com.google.firebase:firebase-auth-ktx")
+    implementation("com.google.firebase:firebase-analytics")
     implementation(libs.androidx.core.ktx)
     implementation("com.google.code.gson:gson:2.9.0")
     implementation(libs.androidx.lifecycle.runtime.ktx)

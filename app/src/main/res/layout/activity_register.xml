@@ -2,19 +2,19 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:padding="24dp"
+    android:orientation="vertical"
     android:gravity="center_vertical">
 
     <EditText
-        android:id="@+id/editEmail"
+        android:id="@+id/editEmailRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Email"
         android:inputType="textEmailAddress" />
 
     <EditText
-        android:id="@+id/editSenha"
+        android:id="@+id/editSenhaRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Senha"
@@ -22,24 +22,9 @@
         android:layout_marginTop="12dp" />
 
     <Button
-        android:id="@+id/btnLogin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Entrar"
-        android:layout_marginTop="20dp" />
-
-<!--    <Button-->
-<!--        android:id="@+id/btnRegistrar"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Criar conta"-->
-<!--        android:layout_marginTop="16dp"/>-->
-
-    <Button
-        android:id="@+id/btnCadastrar"
+        android:id="@+id/btnCadastrarRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Cadastrar"
-        android:layout_marginTop="12dp" />
-
+        android:layout_marginTop="20dp" />
 </LinearLayout>
